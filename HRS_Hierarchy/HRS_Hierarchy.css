@@ -1,0 +1,11 @@
+.THIS button.slds-button[name="openCase"]   {
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.THIS th.slds-tree__item  {
+    display: table-cell;
+    
+}

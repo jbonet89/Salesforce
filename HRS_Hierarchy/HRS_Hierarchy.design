@@ -1,0 +1,7 @@
+<design:component>
+    <design:attribute name="isConsoleLayout" label="Console Layout" default="false" description="Will it show in a console layout? This attribute is to open the reference in a primary tab." />
+    
+    <sfdc:objects>
+        <sfdc:object>Case</sfdc:object>
+    </sfdc:objects>
+</design:component>

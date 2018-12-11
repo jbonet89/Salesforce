@@ -1,0 +1,35 @@
+<aura:component controller="HRS_Hierarchy" access="global" implements="force:appHostable,force:hasRecordId,force:hasSObjectName,flexipage:availableForRecordHome">
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <!--HANDLER-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!--DESIGN ATTRIBUTES -->  
+    <aura:attribute name="isConsoleLayout" type="Boolean" default="false" access="GLOBAL" />
+    
+    <!--ATTRIBUTES-->
+    <aura:attribute name="gridColumns" type="List" access="PRIVATE" />
+    <aura:attribute name="gridData" type="Object" access="PRIVATE" />
+    <aura:attribute name="gridExpandedRows" type="List" access="PRIVATE" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="sObjectName" type="String" />
+    
+    
+    <!--BODY-->
+    <lightning:card iconName="standard:hierarchy" title="Hierarchy" class="slds-text-title_caps">        
+        <!--<p>{!v.recordId}</p>-->
+        <!--<p>{!v.sObjectName}</p>-->
+        <!--<lightning:button variant="Neutral" label="Expand All" title="Expand All" onclick="{! c.expandAll }" />-->
+        
+        <lightning:treeGrid
+            columns="{! v.gridColumns }"
+            data="{! v.gridData }"
+            expandedRows="{! v.gridExpandedRows }"
+            keyField="objId"
+            hideCheckboxColumn="true"    
+            onrowaction="{! c.handleRowAction }"
+            aura:id="mytreeCaseHierarchy"
+        />
+    </lightning:card>
+</aura:component>
